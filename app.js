@@ -1,7 +1,30 @@
 import express from 'express'
 
+// creating instance of express micro-framework 
+// & for port to listen
 const app = express()
 const PORT = 3000
+
+const dbObject = {
+    "slug": "test",
+    "name": "The Test",
+    "description": "The BEST Test Ever!",
+    "price": "Priceless"
+}
+
+//representing a database w/ entries
+const dbReplica = [{
+    "slug": "coffee",
+    "name": "Coffee",
+    "description": "very good very nice",
+    "price": "6"
+},
+{
+    "slug": "tea",
+    "name": "Tea",
+    "description": "a healthy alternative",
+    "price": "3"
+}]
 
 app.get('/', (request, response) => {
     response.send('Welcome to my practice web page!');
@@ -22,6 +45,22 @@ app.get('/math', (request, response) => {
     const number2 = 10;
     const plusMath = (number1 + number2)
     response.send(`What's ${number1} + ${number2}? It's ${plusMath}`);
+})
+
+app.get('/dynamic/:slug1', (request, response) => {
+    
+    //saves url slug 
+    const slug1 = request.params.slug1
+    
+    //control flow + check if slug is in list
+    if (Object.values(dbObject).includes(slug1)) {
+        response.send(`You have selected the item: '${slug1}'. <p>
+        Name: '${dbObject.name}' <p>
+        Description: '${dbObject.description}' <p> 
+        Price: '${dbObject.price}'`)
+    } else {
+        response.send(`'${slug1}' is not available today kekW.`)
+    }
 })
 
 
