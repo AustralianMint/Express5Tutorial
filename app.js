@@ -1,9 +1,13 @@
 import express from 'express'
+import { logger } from './middlewares/logger.js'
 
 // create instance of express micro-framework 
 // & for port to listen
 const app = express()
 const PORT = 3000
+
+//adding middleware
+app.use(logger)
 
 //One entry in a database
 const dbObject = {
