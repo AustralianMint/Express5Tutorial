@@ -1,10 +1,11 @@
 import express from 'express'
 
-// creating instance of express micro-framework 
+// create instance of express micro-framework 
 // & for port to listen
 const app = express()
 const PORT = 3000
 
+//One entry in a database
 const dbObject = {
     "slug": "test",
     "name": "The Test",
@@ -38,6 +39,7 @@ app.post('/contact', (request, response) => {
     response.send('Thank you for your message. We will get in touch soon.');
 })
 
+
 //Route that does some JavaScript math 
 //then returnes saved variable values.
 app.get('/math', (request, response) => {
@@ -47,6 +49,8 @@ app.get('/math', (request, response) => {
     response.send(`What's ${number1} + ${number2}? It's ${plusMath}`);
 })
 
+
+//Route that handles depending on the request info
 app.get('/dynamic/:slug1', (request, response) => {
     
     //saves url slug 
@@ -61,6 +65,15 @@ app.get('/dynamic/:slug1', (request, response) => {
     } else {
         response.send(`'${slug1}' is not available today kekW.`)
     }
+})
+
+
+//this route adds two numbers, then shows the result.
+app.get('/dynamic/add/:firstNumber/and/:secondNumber', (request, response) => {
+    const first = Number(request.params.firstNumber)
+    const second = Number(request.params.secondNumber)
+    const result = first + second
+    response.send(`${first} plust ${second} equals = ${result}.`) 
 })
 
 
