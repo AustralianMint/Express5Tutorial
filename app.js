@@ -63,6 +63,14 @@ app.get('/dynamic/:slug1', (request, response) => {
     }
 })
 
+//this route adds two numbers, then shows the result.
+app.get('/dynamic/add/:firstNumber/and/:secondNumber', (request, response) => {
+    const first = Number(request.params.firstNumber)
+    const second = Number(request.params.secondNumber)
+    const result = first + second
+    response.send(`${first} plust ${second} equals = ${result}.`) 
+})
+
 
 app.listen(PORT, () => {
     console.log(`😁 Started server on port ${PORT}`);
