@@ -12,5 +12,5 @@ Topics:
 - Routing
 - More complex routing
 - Middlewares
-- 
-
+- Serving static files
+- URL Query Strings and Form Data
