@@ -6,10 +6,12 @@ import { logger } from './middlewares/logger.js'
 const app = express()
 const PORT = 3000
 
-//adding middleware
+//add middleware:
 app.use(logger)
 //<the virtual url path>, (<the actual folder name>)
 app.use('/assets', express.static('public'))
+//allows parsing the .body of request
+app.use(express.urlencoded({extended: true}))
 
 //One entry in a database
 const dbObject = {
@@ -33,18 +35,30 @@ const dbReplica = [{
     "price": "3"
 }]
 
-app.get('/', (request, response) => {
-    response.send('Welcome to my practice web page!');
+app.get('/', (request, response) => {    
+    console.log(request.query)
+    response.send('Welcome to my practice web page!')
 })
 
 app.get('/contact', (request, response) => {
     response.send('Reach out to us if you have any questions'); 
 })
 
+app.get('/search', (request, response) => {
+    //responds with query string 
+    response.send('item searched for: ' + request.query.q)
+})
+
 app.post('/contact', (request, response) => {
+    console.log('Contact form submission: ', request.body)
     response.send('Thank you for your message. We will get in touch soon.');
 })
 
+//immitate sending data to server w/ form
+app.post('/admin', (request, response) => { 
+    console.log('You have added: ', request.body)
+    response.send('This is suppose to show you what you have added but it does not yet')
+})
 
 //Route that does some JavaScript math 
 //then returnes saved variable values.
