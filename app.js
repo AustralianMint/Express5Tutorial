@@ -8,6 +8,8 @@ const PORT = 3000
 
 //adding middleware
 app.use(logger)
+//<the virtual url path>, (<the actual folder name>)
+app.use('/assets', express.static('public'))
 
 //One entry in a database
 const dbObject = {
