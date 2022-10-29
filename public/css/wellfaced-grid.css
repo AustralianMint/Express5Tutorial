@@ -10,12 +10,25 @@ a {
 
 p {
     font-family: 'Inter';
+    font-size: 18px;
+}
+
+.filter-text-block {
+    color: blue;
+    margin-top: 20px;
+}
+
+.category-filter {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-start: 2;
+    grid-column-end: 3;
 }
 
 .header-paragraph {
     font-family: 'Inter';
-    font-size: 30px;
-    font-weight: 900;
+    font-size: 50px;
+    font-weight: bold;
 }
 
 h1 {
@@ -33,18 +46,22 @@ a.early-access-button {
     color: white;
     font-size: 16px;
     border-radius: 55px;
-    padding: 0.5em;
+    padding: 1em;
 }
 
 .wrapper {
     display: grid;
-    grid-template-rows: 20% 250px 100px auto;
+    grid-template-rows: 10% 35% 175px auto;
     grid-template-columns: 10% 80% 10%;
 }
 
 .wrapper>div {
     grid-column-start: 2;
     grid-column-end: 3;
+}
+
+nav ul:first-child{
+    font-weight: bold;
 }
 
 .wrapper>nav {
@@ -70,11 +87,6 @@ nav ul:last-child {
     grid-column-end: 3;
 }
 
-.wrapper>article {
-    background-color: #ccc;
-    grid-column-start: 2;
-    grid-column-end: 3;
-}
 
 #filter-options {
     font-weight: bolder;
