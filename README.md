@@ -1,8 +1,8 @@
 # Express5 tutorial
 
-This tutorial is made by Sam - our SE teacher.
-He is teaching us how to make a webite.
-I am applying his teachings to a personal project.
+This tutorial is made by Sam - our SE teacher.  
+He is teaching us how to make a webite.  
+I am applying his teachings to a personal project.  
 
 We focus on the JavaScript micro-framework called "Express".
 
