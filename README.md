@@ -20,6 +20,6 @@ We focus on the JavaScript micro-framework called "Express".
 
 ### Website Structure:
 
-[website-structure](./images/websiteStructureDiagram.png)
+[website-structure](./images/websiteStructure.jpeg)
 
 
