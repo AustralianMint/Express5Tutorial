@@ -1,17 +1,12 @@
+/* for everythning selector */
 *{
     box-sizing: border-box;
 }
 
-a {
-    color: #29406A;
-    text-decoration: none;
-    font-family: 'Inter';
-}
 
-p {
-    font-family: 'Inter';
-    font-size: 18px;
-}
+
+/* Simple selectors:*/
+/* Class selectors */
 
 .filter-text-block {
     color: blue;
@@ -28,21 +23,11 @@ p {
 .header-paragraph {
     font-family: 'Inter';
     font-size: 50px;
-    font-weight: bold;
-}
-
-h1 {
-    font-family: 'Inter';
-    line-height: 23px;
-    font-weight: bold;
-}
-
-a.early-access-button {
-    color: white;
+    font-weight: 900;
 }
 
 .button {
-    background-color: #7791cf;
+    background-color: #2E3F67;
     color: white;
     font-size: 16px;
     border-radius: 55px;
@@ -60,24 +45,10 @@ a.early-access-button {
     grid-column-end: 3;
 }
 
-nav ul:first-child{
-    font-weight: bold;
-}
-
 .wrapper>nav {
     background-color: #F7F8FC;
     grid-column-start: 2;
     grid-column-end: 3;
-}
-
-nav ul {
-    display: grid;
-    grid-template-columns: repeat(3, 0.4fr);
-    list-style-type: none;
-}
-
-nav ul:last-child {
-    color: white;
 }
 
 .wrapper>main {
@@ -87,12 +58,6 @@ nav ul:last-child {
     grid-column-end: 3;
 }
 
-
-#filter-options {
-    font-weight: bolder;
-}
-
-
 .wrapper>footer {
     background-color: beige;
 }
@@ -100,4 +65,55 @@ nav ul:last-child {
 .wrapper>* {
     border: 1px solid black;
     padding: 2em;
+}
+
+
+
+/* ID selectors*/
+
+#button-main {
+    margin-top: 50px;
+}
+
+#filter-options {
+    font-weight: bolder;
+}
+
+
+
+/* Normal Selectors */
+
+nav ul:first-child{
+    font-weight: bold;
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(3, 0.5fr);
+    list-style-type: none;
+}
+
+nav ul:last-child {
+    color: white;
+}
+
+h1 {
+    font-family: 'Inter';
+    line-height: 23px;
+    font-weight: bold;
+}
+
+a.early-access-button {
+    color: white;
+}
+
+a {
+    color: #29406A;
+    text-decoration: none;
+    font-family: 'Inter';
+}
+
+p {
+    font-family: 'Inter';
+    font-size: 18px;
 }
